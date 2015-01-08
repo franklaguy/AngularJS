@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en" ng-app="myApp"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en" ng-app="myApp"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" ng-app="myApp"> <![endif]-->
+<!--[if lt IE 9]><script>document.createElement('header');document.createElement('nav');document.createElement('section');document.createElement('article');document.createElement('aside');document.createElement('footer');</script><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" ng-app="myApp"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title ng-bind="title">Nadia</title>
+    <meta name="keyword" content="Nadia">
+    <meta name="description" content="Nadia">
+    <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body>
+	<section ng-controller="GreetingController">
+		<h1>Controllers / Variables / Date-Time / Random Math</h1>
+		<p>{{greeting}} User! The current date/time is <span>{{now | date:'medium'}}</span>
+			<button ng-click="getRandomHelloMessage()">Random Hello Message</button></p>
+	</section>
+	<hr />
+	<section ng-controller="FinanceController">
+		<h1>Percentages</h1>
+		<p>Your Salary?
+		<input type="text" ng-model="salary">
+		<br />How much would you invest in gadgets?
+		<input type="text" ng-model="percentage">%
+		<br />The amount to be spent in shopping will be:
+		<span>{{result() | currency}}</span></p>
+	</section>
+	<hr />
+	<section ng-init="fbID='275946239119864'">
+		<h1>Two-way Binding</h1>
+		<p>Display Facebook ID photo, enter FBID: <input type="text" ng-model="fbID" /></p>
+		<p><img ng-src="https://graph.facebook.com/{{fbID}}/picture?type=normal" /></p>
+	</section>
+	<hr />
+	<section ng-controller="SiteController">
+		<a name="nesting">&nbsp;</a>
+		<h1>Nesting / Arrays / Add to Cart</h1>
+		<p>{{publisher}} excels in {{type}} books</p>
+		<div ng-controller="BookController">
+			<h3>Some of the popular books from {{publisher}}</h3>
+			<ul><li ng-repeat="book in books">{{book}}. <a href="#nesting" ng-click="addToWishList(book)">Add to Wish List</a></li></ul>
+		</div>
+	</section>
+	<hr />
+	<section ng-controller="TimeoutController">
+		<h1>Timeout function</h1>
+		<button ng-click="scheduleTask()">Get message after 3 secs</button>
+		<p>Message fetched: {{message}}</p>
+	</section>
+	<hr />
+	<section ng-controller="MessageController">
+		<h1>Broadcasting / Emitting Events</h1>
+		<h4>Messages:</h4>
+		<ul><li ng-repeat="message in messages">{{message.text}}</li></ul>
+		<div ng-controller="StatsController">
+			<h4>Stats:</h4>
+			<p>{{messages.length}} Message(s)</p>
+			<p>Status: <span style="color:{{statusColor}}">{{status}}</span></p>
+		</div>
+	</section>
+	<hr />
+	<section ng-controller="GreetController">
+		<h1>Routing - Partial Views</h1>
+		<ul>
+			<li><a href="#/view1">Find Users</a></li>
+		</ul>
+		<div ui-view></div>
+	</section>
+	
+	<!-- Scripts begin -->
+	<script src="lib/angular/angular.js"></script>
+	<script src="lib/angular/angular-ui-router.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/services.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/filters.js"></script>
+	<script src="js/directives.js"></script>
+	<!-- Scripts end -->
+</body>
+</html>
