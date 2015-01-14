@@ -1,0 +1,5 @@
+<section ng-init="fbID='275946239119864'">
+	<h1>Two-way Binding</h1>
+	<p>Display Facebook ID photo, enter FBID: <input type="text" ng-model="fbID" /></p>
+	<p><img ng-src="https://graph.facebook.com/{{fbID}}/picture?type=normal" /></p>
+</section>

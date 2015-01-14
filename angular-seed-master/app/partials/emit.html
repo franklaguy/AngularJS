@@ -1,0 +1,10 @@
+<section ng-controller="MessageController">
+	<h1>Broadcasting / Emitting Events</h1>
+	<h4>Messages:</h4>
+	<ul><li ng-repeat="message in messages">{{message.text}}</li></ul>
+	<div ng-controller="StatsController">
+		<h4>Stats:</h4>
+		<p>{{messages.length}} Message(s)</p>
+		<p>Status: <span style="color:{{statusColor}}">{{status}}</span></p>
+	</div>
+</section>

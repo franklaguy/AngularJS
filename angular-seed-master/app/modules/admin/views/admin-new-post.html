@@ -1,0 +1,39 @@
+<section>
+	<div>
+		<form name="newPostForm" class="form-horizontal" novalidate role="form">
+			<div class="form-group" ng-class="{'has-error' :newPostForm.title.$dirty && newPostForm.title.$invalid}">
+				<label for="title" class="control-label">Post Title</label>
+				<div>
+					<input type="text" name="title" ng-model="post.title" ng-required="true" class="form-control" id="title" placeholder="Title" />
+					<span class="error-message" ng-show="newPostForm.title.$dirty && newPostForm.title.$invalid">Title required.</span>
+				</div>
+			</div>
+			<div class="form-group" ng-class="{'has-error' :newPostForm.content.$dirty && newPostForm.content.$invalid}">
+				<label for="content" class="control-label">Content</label>
+				<div>
+					<textarea cols="8" rows="6" name="content" class="form-control" ng-model="post=content" ng-required="true" id="content" placeholder="Content"></textarea> 
+					<span class="error-message" ng-show="newPostForm.content.$dirty && newPostForm.content.$invalid">Content required.</span>
+				</div>
+			</div>
+			<div class="form-group" ng-class="{'has-error' :newPostForm.tags.$dirty && newPostForm.tags.$invalid}">
+				<label for="tags" class="control-label">Tags</label>
+				<div>
+					<input type="text" name="tags" ng-model="post.tags" ng-pattern="/^[\W,]+$/" class="form-control" id="tags" placeholder="Comma separated tags" />
+					<span class="error-message" ng-show="newPostForm.tags.$dirty && newPostForm.tags.$invalid">No special chars</span>
+				</div>
+			</div>
+			<div class="form-group" ng-class="{'has-error' :newPostForm.keywords.$dirty && newPostForm.keywords.$invalid}">
+				<label for="keywords" class="control-label">Keywords</label>
+				<div>
+					<input type="text" name="keywords" ng-model="post.keywords" ng-pattern="/^[\W,]+$/" class="form-control" id="keywords" placeholder="Comma separated keywords" />
+					<span class="error-message" ng-show="newPostForm.keywords.$dirty && newPostForm.keywords.$invalid">No special chars</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<div>
+					<button type="submit" class="btn btn-success" ng-disabled="newPostForm.$invalid">Add Post</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</section>

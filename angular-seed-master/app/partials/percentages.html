@@ -1,0 +1,9 @@
+<section ng-controller="FinanceController">
+	<h1>Percentages</h1>
+	<p>Your Salary? $ 
+	<input type="text" ng-model="salary">
+	<br />How much would you invest in gadgets?
+	<input type="text" ng-model="percentage"> %
+	<br />The amount to be spent in shopping will be:
+	<span>{{result() | currency}}</span></p>
+</section>

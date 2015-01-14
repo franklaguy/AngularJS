@@ -1,29 +1,50 @@
-<!doctype html>
-<html lang="en" ng-app="myApp">
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en" ng-app="myApp"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en" ng-app="myApp"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" ng-app="myApp"> <![endif]-->
+<!--[if lt IE 9]><script>document.createElement('header');document.createElement('nav');document.createElement('section');document.createElement('article');document.createElement('aside');document.createElement('footer');</script><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" ng-app="myApp"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <title>My AngularJS App</title>
-  <link rel="stylesheet" href="css/app.css"/>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title ng-bind="title">Nadia 2</title>
+    <meta name="keyword" content="Nadia">
+    <meta name="description" content="Nadia">
+    <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
+	<section>
+		<ul class="menu">
+		    <li><a href="#/random-math">Random Math</a></li>
+		    <li><a href="#/percentages">Percentages</a></li>
+		    <li><a href="#/binding">Two-way Binding</a></li>
+		    <li><a href="#/arrays">Arrays</a></li>
+		    <li><a href="#/timeout">Timeout</a></li>
+		    <li><a href="#/emit">Emit</a></li>
+		    <li><a href="#/view1">Partials</a></li>
+		    <li><a href="#/forms">Forms</a></li>
+		</ul>
+	</section>
+	<section>
+		<h1>Basic Angular Library</h1>
+		<div ui-view>
+			<p>This is a library of basic functions using AngularJS. Click above menu items to continue.</p>
+		</div>
+	</section>
+  	<section>
+  		<footer>Angular seed app: <span app-version></span></footer>
+  	</section>
 
-  <div ng-view></div>
-
-  <div>Angular seed app: v<span app-version></span></div>
-
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="lib/angular/angular.js"></script>
-  <script src="lib/angular/angular-route.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/services.js"></script>
-  <script src="js/controllers.js"></script>
-  <script src="js/filters.js"></script>
-  <script src="js/directives.js"></script>
+	<!-- In production use:
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+	-->
+	<script src="lib/angular/angular.js"></script>
+	<script src="lib/angular/angular-ui-router.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/services.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/filters.js"></script>
+	<script src="js/directives.js"></script>
 </body>
 </html>

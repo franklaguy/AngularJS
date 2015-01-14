@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-angular.module('spBlogger.posts.controllers', [])
+angular.module('spBlogger.posts.controllers', ['ui.router'])
 	.controller('PostController', ['$scope', 'postService', function($scope, postService){
 		$scope.getAllPosts = function(){
 			return postService.getAll();

@@ -71,7 +71,7 @@ angular.module('myApp.controllers', [])
 		});
 	})
 	.controller('Controller1Controller', function($scope, $location, $state){
-		$scope.message = "Hello World";
+		$scope.message = "This is the partial 1. Enter name and press submit button.";
 		$scope.loadView2 = function(){
 			$state.go('view2', {
 				firstname: $scope.firstname,
@@ -91,5 +91,23 @@ angular.module('myApp.controllers', [])
 	.controller('LogController', function($scope, $log){ // example
 		$scope.data = 'Sample data';
 		$log.postInfoToURI('Added some data to scope');
+	})
+	.controller('UserController', function($scope){
+		$scope.user = {};
+		$scope.countries = [{
+			id: 'US',
+			desc: 'United States'
+		}, {
+			id: 'GB',
+			desc: 'United Kingdom'
+		}, {
+			id: 'AU',
+			desc: 'Australia'
+		}];
+		$scope.saveUser = function(isValid){
+			if(isValid) { console.log('saving user'); }
+			else { console.log('Unable to save. Validation error!!'); }
+		}
 	});
+
 
