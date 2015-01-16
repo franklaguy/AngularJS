@@ -1,44 +1,36 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en" ng-app="spBlogger.posts"> <![endif]-->
-<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en" ng-app="spBlogger.posts"> <![endif]-->
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" ng-app="spBlogger.posts"> <![endif]-->
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en" ng-app="admin"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en" ng-app="admin"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" ng-app="admin"> <![endif]-->
 <!--[if lt IE 9]><script>document.createElement('header');document.createElement('nav');document.createElement('section');document.createElement('article');document.createElement('aside');document.createElement('footer');</script><![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" ng-app="spBlogger.posts"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" ng-app="admin"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>spBlogger</title>
+	<title>Admin</title>
     <meta name="keyword" content="spBlogger">
     <meta name="description" content="spBlogger">
     <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
 	<nav ng-include src="'partials/includes/nav.html'"></nav>
-	<section ng-controller="PostController">
+	<section ng-controller="AdminController">
 		<h1>Basic Angular Library</h1>
 		<p>This is a library of basic functions using AngularJS. Click above menu items to continue.</p>
-		<div class="jumbotron text-center">
-			<h1>The Single Page Blogger</h1>
-			<p>One stop blogging solution</p>
-		</div>
-		<div ui-view></div>
-		<div class="row footer">
-			<div class="col-xs-12 text-center">
-				<p>The Single Page Blogger <span app-version></span></p>
-			</div>
-		</div>
+		<h1>Admin Panel - Blogs</h1>
+		<div ui-view>Not logged in</div>
 	</section>
 	<footer ng-include src="'partials/includes/footer.html'"></footer>
 	
 	<!-- Scripts begin -->
 	<script src="lib/angular/angular.js"></script>
 	<script src="lib/angular/angular-ui-router.min.js"></script>
-	<script src="modules/posts/postModule.js"></script>
-	<script src="modules/posts/js/services.js"></script>
-	<script src="modules/posts/js/controllers.js"></script>
-	<script src="modules/posts/js/filters.js"></script>
-	<script src="modules/posts/js/directives.js"></script>
+	<script src="modules/admin/adminModule.js"></script>
+	<script src="modules/admin/js/services.js"></script>
+	<script src="modules/admin/js/controllers.js"></script>
+	<script src="modules/admin/js/filters.js"></script>
+	<script src="modules/admin/js/directives.js"></script>
 	<!-- Scripts end -->
 </body>
 </html>

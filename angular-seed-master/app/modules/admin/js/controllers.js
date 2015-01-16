@@ -1,14 +1,9 @@
 'use strict';
 
 /* Controllers */
-
-angular.module('spBlogger.admin.controllers', [
-                                             	 'spBlogger.admin.filters',
-                                            	 'spBlogger.admin.services',
-                                            	 'spBlogger.admin.controllers',
-                                            	 'ui.router.compat'])
+angular.module('admin.controllers', ['ui.router'])
 	.controller('AdminController',['$scope', function($scope) {
-		
+
 	}])
 	.controller('PostCreationController',['$scope', function($scope){
 		

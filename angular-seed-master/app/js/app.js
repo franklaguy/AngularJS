@@ -23,7 +23,9 @@ angular.module('myApp', [
 			  return ['Misko', 'Vojta', 'Brad']
 		  }
 	  }
-  }).state('forms', {url:'/forms', controller:'Controller1Controller', templateUrl:'partials/forms.html'});
+  }).state('forms', {url:'/forms', controller:'Controller1Controller', templateUrl:'partials/forms.html'})
+  .state('allPosts', { url:'/posts', templateUrl:'modules/posts/views/posts.html', controller:'PostController'})
+  .state('singlePost', {url:'/posts/:id/:permalink',templateUrl:'modules/posts/views/singlePost.html',controller:'PostDetailsController'});
   //$urlRouterProvider.otherwise('/view1');
 })
 .run(function($rootScope){
@@ -68,24 +70,4 @@ angular.module('myApp', [
 		return $delegate;
 	});
 });
-
-angular.module('spBlogger', ['ui.router.compat'])
-
-	//.config(['$stateProvider','$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-	.config(function($stateProvider, $urlRouterProvider) {
-			$stateProvider.state('allPosts', {
-				url: '/posts',
-				templateUrl: 'modules/posts/views/posts.html',
-				controller: 'PostController'
-			})
-			.state('singlePost', {
-				url: '/posts/:id/:permalink',
-				templateUrl: 'modules/posts/views/singlePost.html',
-				controller: 'PostDetailsController'
-			});
-	})
-	//}])
-	.run(['state', function(state) {
-	$state.go('allPosts');
-}]);
 

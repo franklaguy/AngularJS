@@ -68,6 +68,6 @@ code,kbd,pre,samp {font-family: monospace, monospace;font-size: 1em;}
 /* Reset End ********************************************/
 
 /* Custom Styles */
-section {margin:20px;}
+section, nav, footer {margin:20px;}
 ul.menu li {float:left;padding:3px 13px 3px 0;}
 
