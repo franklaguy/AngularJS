@@ -1,6 +1,6 @@
 <section>
 	<div>
-		<form name="newPostForm" class="form-horizontal" novalidate role="form">
+		<form name="newPostForm" novalidate role="form">
 			<div class="form-group" ng-class="{'has-error' :newPostForm.title.$dirty && newPostForm.title.$invalid}">
 				<label for="title" class="control-label">Post Title</label>
 				<div>
@@ -11,7 +11,7 @@
 			<div class="form-group" ng-class="{'has-error' :newPostForm.content.$dirty && newPostForm.content.$invalid}">
 				<label for="content" class="control-label">Content</label>
 				<div>
-					<textarea cols="8" rows="6" name="content" class="form-control" ng-model="post=content" ng-required="true" id="content" placeholder="Content"></textarea> 
+					<textarea cols="8" rows="6" name="content" class="form-control" ng-model="post.content" ng-required="true" id="content" placeholder="Content"></textarea> 
 					<span class="error-message" ng-show="newPostForm.content.$dirty && newPostForm.content.$invalid">Content required.</span>
 				</div>
 			</div>
